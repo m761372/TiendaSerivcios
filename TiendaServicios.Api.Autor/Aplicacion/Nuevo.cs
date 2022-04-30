@@ -1,4 +1,5 @@
-﻿using MediatR;
+﻿using FluentValidation;
+using MediatR;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -25,6 +26,15 @@ namespace TiendaServicios.Api.Autor.Aplicacion
             public Manejador(ContextoAutor contexto)
             {
                 _contexto = contexto;
+            }
+
+            public class EjecutaValidacion: AbstractValidator<Ejecuta>
+            {
+                public EjecutaValidacion()
+                {
+                    RuleFor(x => x.Nombre).NotEmpty();
+                    RuleFor(x => x.Apellido).NotEmpty();
+                }
             }
 
             public async Task<Unit> Handle(Ejecuta request, CancellationToken cancellationToken)

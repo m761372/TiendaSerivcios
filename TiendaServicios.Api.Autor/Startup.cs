@@ -1,3 +1,5 @@
+using AutoMapper;
+using FluentValidation.AspNetCore;
 using MediatR;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -29,7 +31,7 @@ namespace TiendaServicios.Api.Autor
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddControllers();
+            services.AddControllers().AddFluentValidation(cfg => cfg.RegisterValidatorsFromAssemblyContaining<Nuevo>());
 
             services.AddDbContext<ContextoAutor>(options =>
             {
@@ -37,6 +39,8 @@ namespace TiendaServicios.Api.Autor
             });
 
             services.AddMediatR(typeof(Nuevo.Manejador).Assembly);
+            services.AddAutoMapper(typeof(Consulta.Manejador));
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
