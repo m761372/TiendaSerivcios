@@ -3,11 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.32413.511
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TiendaServicios.Api.Autor", "TiendaServicios.Api.Autor\TiendaServicios.Api.Autor.csproj", "{6DB76490-C0A1-4E9E-863B-ACD0BE613C46}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TiendaServicios.Api.Autor", "TiendaServicios.Api.Autor\TiendaServicios.Api.Autor.csproj", "{6DB76490-C0A1-4E9E-863B-ACD0BE613C46}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TiendaServicios.Api.Libro", "TiendaServicios.Api.Libro\TiendaServicios.Api.Libro.csproj", "{1E9219D5-4EA5-494A-94C0-68E3648C6560}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TiendaServicios.Api.Libro", "TiendaServicios.Api.Libro\TiendaServicios.Api.Libro.csproj", "{1E9219D5-4EA5-494A-94C0-68E3648C6560}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TiendaServicios.Api.CarritoCompra", "TiendaServicios.Api.CarritoCompra\TiendaServicios.Api.CarritoCompra.csproj", "{BA4421EF-D65C-4261-BDF2-A4959FFB6DED}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TiendaServicios.Api.CarritoCompra", "TiendaServicios.Api.CarritoCompra\TiendaServicios.Api.CarritoCompra.csproj", "{BA4421EF-D65C-4261-BDF2-A4959FFB6DED}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TiendaServicios.Api.Libro.Test", "TiendaServicios.Api.Libro.Test\TiendaServicios.Api.Libro.Test.csproj", "{61B5276C-A16D-4E59-A5EF-FD7B4B87B673}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +29,10 @@ Global
 		{BA4421EF-D65C-4261-BDF2-A4959FFB6DED}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BA4421EF-D65C-4261-BDF2-A4959FFB6DED}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BA4421EF-D65C-4261-BDF2-A4959FFB6DED}.Release|Any CPU.Build.0 = Release|Any CPU
+		{61B5276C-A16D-4E59-A5EF-FD7B4B87B673}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{61B5276C-A16D-4E59-A5EF-FD7B4B87B673}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{61B5276C-A16D-4E59-A5EF-FD7B4B87B673}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{61B5276C-A16D-4E59-A5EF-FD7B4B87B673}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

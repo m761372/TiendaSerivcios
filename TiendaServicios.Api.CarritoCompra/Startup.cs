@@ -13,6 +13,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using TiendaServicios.Api.CarritoCompra.Aplicacion;
 using TiendaServicios.Api.CarritoCompra.Persistencia;
+using TiendaServicios.Api.CarritoCompra.RemoteInterface;
+using TiendaServicios.Api.CarritoCompra.RemoteService;
 
 namespace TiendaServicios.Api.CarritoCompra
 {
@@ -29,6 +31,8 @@ namespace TiendaServicios.Api.CarritoCompra
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+
+            services.AddScoped<ILibrosService, LibrosService>();
 
             services.AddMediatR(typeof(Nuevo.Manejador).Assembly);
 
