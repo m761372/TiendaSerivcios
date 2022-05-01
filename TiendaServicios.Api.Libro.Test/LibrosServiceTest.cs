@@ -42,10 +42,36 @@ namespace TiendaServicios.Api.Libro.Test
                 .Setup(x => x.GetAsyncEnumerator(new System.Threading.CancellationToken()))
                 .Returns(new AsyncEnumerator<LibreriaMaterial>(dataPrueba.GetEnumerator()));
 
+
+            dbSet.As<IQueryable<LibreriaMaterial>>().Setup(x => x.Provider)
+                .Returns(new AsyncQueryProvider<LibreriaMaterial>(dataPrueba.Provider));
+
             var contexto = new Mock<ContextoLibreria>();
             contexto.Setup(x => x.LibreriaMaterial).Returns(dbSet.Object);
 
             return contexto;
+        }
+        [Fact]
+        public async void GetLibroById()
+        {
+            var mockContexto = CrearContexto();
+
+            var mapConfig = new MapperConfiguration(cfg =>
+            {
+                cfg.AddProfile(new MappingTest());
+            });
+
+            var mapper = mapConfig.CreateMapper();
+
+
+            ConsultaFiltro.Manejador manejador = new ConsultaFiltro.Manejador(mockContexto.Object, mapper);
+
+            ConsultaFiltro.LibroUnico request = new ConsultaFiltro.LibroUnico(Guid.Empty);
+
+            var libro = await manejador.Handle(request, new System.Threading.CancellationToken());
+
+            Assert.NotNull(libro);
+            Assert.True(libro.LibreriaMaterialId == Guid.Empty);
         }
 
         [Fact]
@@ -57,6 +83,7 @@ namespace TiendaServicios.Api.Libro.Test
             var mapConfig = new MapperConfiguration(cfg =>
             {
                 cfg.AddProfile(new MappingTest());
+
             });
 
             //var mapper = new Mapper(mapConfig);
