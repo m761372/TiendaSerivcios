@@ -51,7 +51,7 @@ namespace TiendaServicios.Api.Autor
                 app.UseDeveloperExceptionPage();
             }
 
-            app.UseHttpsRedirection();
+            
 
             app.UseRouting();
 
